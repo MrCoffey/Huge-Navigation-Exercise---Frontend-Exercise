@@ -1,0 +1,583 @@
+/*************
+  By: Jorge Luis Madrid
+
+  1. General normalitation
+  2. HD Desktop styling (> 1150px)
+  3. Small screen desktop (>768px and < 1150)
+  4. Mobile styling (<768px)
+**************/
+
+/*
+  1. General normalitation
+*/
+@import "fonts.css";
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+body a{
+  font: 5vmin/1.5 HUGEAvantGardeBold;
+  letter-spacing: -0.03em;
+  font-weight: 100;
+  text-decoration: none;
+  width: 100%;
+}
+
+h1{
+  font: 12vmin/1 HUGEAvantGardeBold;
+}
+
+li {
+  list-style: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 997;
+  will-change: opacity;
+}
+
+/*
+  2. Desktop styling (>= 1150)
+*/
+@media screen and (min-width: 1150px) {
+
+  nav {
+    height: 6rem;
+    position: relative;
+    background-color: #ec008c;
+  }
+
+  nav a {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  #main {
+    margin: 0;
+    padding: 0;
+    left: 9rem;
+    top: 0px;
+    position: absolute;
+    height: 100%;
+    min-width: 90%;
+  }
+
+  #main > li {
+    display: inline-block;
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  #main li:hover > a{
+    color: #ec008c;
+  }
+
+  #main li:hover{
+    background-color: #fff;
+    transition: 0.3s;
+  }
+
+  .collapsible-body {
+  	display: none;
+  	position: absolute;
+  	z-index: 22;
+  	left: 0;
+  	box-sizing: border-box;
+  	background-color: #fff;
+  	padding: 0.5rem;
+  	top: 6rem;
+  	width: 14rem;
+  }
+
+  .collapsible-body > a {
+    color: #000;
+  }
+
+  .collapsible-body ul {
+    padding: 0;
+  }
+
+  #main li:hover .collapsible-body {
+    display: block;
+  }
+
+  .dropdown a {
+    font: 5vmin/1 Galaxie;
+    letter-spacing: -0.06em;
+  }
+
+  .dropdown li {
+    padding: 5%;
+  }
+  /*
+    Logo
+  */
+
+  #logo > i {
+    background: url(../images/HUGE-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 4rem;
+    position: absolute;
+    left: 2rem;
+    top: .8rem;
+    width: 5rem;
+    background-position: 0px 18px;
+  }
+
+  /*
+    Content
+  */
+  .content {
+    min-width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .content .container {
+    padding: 0 24px;
+  }
+
+  .hero-image {
+    min-width: 100%;
+    background-size: cover;
+    background-image: url(../images/background-image.jpg);
+    height: 640px;
+    display: block;
+    position: absolute;
+  }
+
+  .content h1 {
+  	color: #fff;
+  	margin: 50px 0;
+  	font: 12vmin/1 HUGEAvantGardeBold;
+  	letter-spacing: -0.06em;
+  	text-align: center;
+  	position: absolute;
+  	top: 13rem;
+  	width: 35rem;
+  	left: 25%;
+  	margin: 0 auto;
+    font-size: 6rem;
+  }
+
+  .content p {
+    position: absolute;
+    font: 5vmin/1 Galaxie;
+    width: 80%;
+    text-align: justify;
+    top: 41rem;
+    left: 8%;
+    font-size: 2rem;
+  }
+
+  .collapsible-body ul li > a {
+    font-size: 1rem;
+    color: black;
+  }
+
+  .dropdown a {
+    font: 5vmin/1 Galaxie;
+    letter-spacing: -0.06em;
+  }
+
+  .copy {
+    display: none;
+  }
+}
+
+/*
+  3. Small screen desktop (>768px)
+*/
+@media screen and (min-width: 768px) and (max-width: 1150px) {
+
+  nav {
+    height: 4rem;
+    position: relative;
+    background-color: #ec008c;
+  }
+
+  nav a {
+    font-size: 1.5em;
+    color: #fff;
+  }
+
+  #main {
+    margin: 0;
+    padding: 0;
+    left: 10rem;
+    top: 0px;
+    position: absolute;
+    height: 90%;
+    min-width: 100%;
+  }
+
+  #main > li {
+    display: inline-block;
+    position: relative;
+    padding: 1.4%;
+  }
+
+  #main li:hover > a{
+    color: #ec008c;
+  }
+
+  #main li:hover{
+    background-color: #fff;
+    transition: 0.3s;
+  }
+
+  .collapsible-body {
+  	display: none;
+  	position: absolute;
+  	z-index: 22;
+  	left: 0;
+  	box-sizing: border-box;
+  	background-color: #fff;
+  	padding: 0.5rem;
+  	top: 4.4rem;
+  	width: 14rem;
+  }
+
+  .collapsible-body > a {
+    color: #000;
+  }
+
+  .collapsible-body ul {
+    padding: 0;
+  }
+
+  #main li:hover .collapsible-body {
+    display: block;
+  }
+
+  .dropdown a {
+    font: 5vmin/1 Galaxie;
+    letter-spacing: -0.06em;
+  }
+
+  .dropdown li {
+    padding: 5%;
+  }
+
+  /*
+    Logo
+  */
+
+  #logo > i {
+    background: url(../images/HUGE-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 4rem;
+    position: absolute;
+    left: 3%;
+    width: 4rem;
+    background-position: 0px 18px;
+  }
+
+  /*
+    Content
+  */
+  .content {
+    min-width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .content .container {
+    padding: 0 24px;
+  }
+
+  .hero-image {
+    min-width: 100%;
+    background-size: cover;
+    background-image: url(../images/background-image.jpg);
+    height: 640px;
+    display: block;
+    position: absolute;
+  }
+
+  .content h1 {
+  	color: #fff;
+  	margin: 50px 0;
+  	font: 12vmin/1 HUGEAvantGardeBold;
+  	letter-spacing: -0.06em;
+  	text-align: center;
+  	position: absolute;
+  	top: 13rem;
+  	width: 70%;
+  	left: 15%;
+  	margin: 0 auto;
+  	font-size: 6rem;
+  	min-width: 70%;
+  }
+
+  .content p {
+  	position: absolute;
+  	font: 5vmin/1 Galaxie;
+  	width: 80%;
+  	text-align: justify;
+  	top: 41rem;
+  	left: 5rem;
+  	font-size: 1.5rem;
+  	min-width: 80%;
+  }
+
+  .collapsible-body ul li > a {
+    font-size: 1rem;
+    color: black;
+  }
+
+  .dropdown a {
+    font: 5vmin/1 Galaxie;
+    letter-spacing: -0.06em;
+  }
+
+  .copy {
+    display: none;
+  }
+
+}
+
+/*
+  3. Mobile styling (<768px)
+*/
+@media screen and (max-width: 768px){
+
+  /* General */
+  ul {
+    overflow: unset;
+    padding: 0;
+  }
+
+  li {
+  	width: 100%;
+  	padding: 14px 24px;
+  }
+
+  .nav-bar {
+    background-color: #ec008c;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    height: 59px;
+    color: #fff;
+    padding-top: 0px;
+    position: fixed;
+    z-index: 1000;
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+
+  .copy {
+    position: relative;
+    top: 27rem;
+    padding: 10px 20px;
+  }
+
+  .copy p {
+    font-family: 'Helvetica Neue';
+    font-size: .9rem;
+  }
+
+  /*
+    Logo
+  */
+  #logo > i {
+    background: url(../images/HUGE-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 75px;
+    position: absolute;
+    left: 27px;
+    top: 15px;
+    width: 71px;
+  }
+
+  /*
+    Close Button
+  */
+  #close{
+    width: 104px;
+    height: 74px;
+    z-index: 1000;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
+
+  #close > i {
+    background: url(../images/toggle-close.svg);
+    background-repeat: no-repeat;
+    bottom: 6px;
+    height: 75px;
+    position: absolute;
+    right: 10px;
+    width: 71px;
+  }
+
+  /*
+    Burger Button
+  */
+  #burger {
+    cursor: pointer;
+    height: 74px;
+    position: absolute;
+    left: 24px;
+    top: 8px;
+    width: 74px;
+    z-index: 1000;
+  }
+
+  #burger > i {
+  	background: url(../images/toggle-open.svg);
+  	background-repeat: no-repeat;
+  	height: 74px;
+  	padding: 55% 38%;
+  	width: 104px;
+  	top: 18px;
+  	position: relative;
+  	right: 18px;
+  }
+
+  /*
+    Nav Content
+  */
+  .top-logo {
+    z-index: 2000;
+    margin-top: 0px;
+    width: 101%;
+    height: 59px;
+    background: #ec008c;
+  }
+
+  .nav-content {
+    background-color: #fff;
+    bottom: 0;
+    position: fixed;
+    top: 0;
+    overflow: auto;
+    z-index: 1000;
+        max-width: 54%;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .responsive{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-content ul li > a{
+    color: #000;
+  }
+
+  /*
+    Hiden sub ul
+  */
+  .collapsible-body{
+    display: none;
+    padding: 0;
+  }
+
+  .collapsible-body ul {
+    margin-top: 32px;
+  }
+
+  .collapsible-body ul > li {
+    height: 48px;
+  }
+
+  .collapsible-body ul li > a {
+    font-size: 1.5rem;
+  }
+
+  /*
+    Hovers
+  */
+  .collapsible-body li:hover a{
+    color: #ec008c;
+  }
+
+  li#Work:hover,
+  li#About:hover,
+  li#Careers:hover,
+  li#Ideas:hover,
+  li#News:hover,
+  li#Events:hover,
+  li#Contact:hover{
+    background: #eee;
+  }
+
+  #main > li{
+    padding: 12px 24px;
+    box-sizing: border-box;
+  }
+
+  .dropdown li {
+    margin-top: 10px;
+    padding-left: 0px;
+    box-sizing: border-box;
+  }
+
+  .dropdown a {
+    font: 5vmin/1 Galaxie;
+    letter-spacing: -0.06em;
+  }
+
+  .selected {
+    display: block !important;
+    width: 96%;
+    position: relative;
+    top: -36px;
+  }
+
+  /*
+    Content
+  */
+  .content {
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .content .container {
+    padding: 0 24px;
+  }
+
+  .hero-image {
+    min-width: 100%;
+    background-size: cover;
+    background-image: url(../images/background-image.jpg);
+    height: 369px;
+    display: block;
+  }
+
+  .content h1 {
+    color: #000;
+    font-size: 2rem;
+    margin: 50px 0;
+    font: 10vmin/1 HUGEAvantGardeBold;
+    letter-spacing: -0.06em;
+    text-align: left;
+  }
+
+  .content p {
+    font: 5vmin/1 Galaxie;
+    text-align: justify;
+  }
+
+}
