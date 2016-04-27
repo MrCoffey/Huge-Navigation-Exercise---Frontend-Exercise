@@ -33,8 +33,6 @@ function $http(url){ // Get data from the '/api' endpoint
 // Take a id and a Json object, looks for a node with that id and create new lists <li>.
 // Then seeds those lists with anchors created using the nested items.
 function renderHTML(element, items){
-  var main = document.getElementById(element);
-
   items.forEach(function(e){
     writteNode(element, '<li id="'+ e.label +'" class="toggle"><a href="' + e.url + '">' + e.label + '</a></li>');
 
@@ -55,13 +53,15 @@ function renderHTML(element, items){
 // Writte HTML using the JSON data Ajax request was successful
 var callback = {
   success : function(data){
-    renderHTML('main', JSON.parse(data).items);
+    renderHTML('main-list', JSON.parse(data).items);
   },
   error : function(data){
     console.log('error', data);
   }
 };
 
+// Callback for $http promise, im calling
+// callback error just for debugging proposals
 $http('/api')
   .then(callback.success)
   .catch(callback.error);

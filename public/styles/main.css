@@ -41,7 +41,14 @@ li {
   height: 120vh;
   background-color: rgba(0,0,0,0.5);
   z-index: 997;
-  will-change: opacity;
+}
+
+.huge-logo {
+  background-image: url(../images/HUGE-white.png);
+}
+
+.hero-image{
+  background-image: url(../images/background-image.jpg);
 }
 
 /*
@@ -60,27 +67,27 @@ li {
     color: #fff;
   }
 
-  #main {
+  .nav-content--container {
     margin: 0;
     padding: 0;
     left: 9rem;
-    top: 0px;
+    top: 0;
     position: absolute;
     height: 100%;
-    min-width: 90%;
+    min-width: 8%;
   }
 
-  #main > li {
+  .nav-content--container > li {
     display: inline-block;
     position: relative;
     padding: 1.5rem;
   }
 
-  #main li:hover > a{
+  .nav-content--container li:hover > a{
     color: #ec008c;
   }
 
-  #main li:hover{
+  .nav-content--container li:hover{
     background-color: #fff;
     transition: 0.3s;
   }
@@ -105,7 +112,7 @@ li {
     padding: 0;
   }
 
-  #main li:hover .collapsible-body {
+  .nav-content--container li:hover .collapsible-body {
     display: block;
   }
 
@@ -121,8 +128,7 @@ li {
     Logo
   */
 
-  #logo > i {
-    background: url(../images/HUGE-white.png);
+  .huge-logo{
     background-size: contain;
     background-repeat: no-repeat;
     height: 4rem;
@@ -130,7 +136,7 @@ li {
     left: 2rem;
     top: .8rem;
     width: 5rem;
-    background-position: 0px 18px;
+    background-position: 0 18px;
   }
 
   /*
@@ -149,15 +155,13 @@ li {
   .hero-image {
     min-width: 100%;
     background-size: cover;
-    background-image: url(../images/background-image.jpg);
     height: 640px;
     display: block;
     position: absolute;
   }
 
-  .content h1 {
+  .lg-font {
   	color: #fff;
-  	margin: 50px 0;
   	font: 12vmin/1 HUGEAvantGardeBold;
   	letter-spacing: -0.06em;
   	text-align: center;
@@ -200,7 +204,7 @@ li {
 @media screen and (min-width: 768px) and (max-width: 1150px) {
 
   nav {
-    height: 4rem;
+    height: 3.5rem;
     position: relative;
     background-color: #ec008c;
   }
@@ -210,27 +214,27 @@ li {
     color: #fff;
   }
 
-  #main {
+  .nav-content--container {
     margin: 0;
     padding: 0;
     left: 10rem;
-    top: 0px;
+    top: 0;
     position: absolute;
     height: 90%;
-    min-width: 100%;
+    min-width: 80%;
   }
 
-  #main > li {
+  .nav-content--container > li {
     display: inline-block;
     position: relative;
     padding: 1.4%;
   }
 
-  #main li:hover > a{
+  .nav-content--container li:hover > a{
     color: #ec008c;
   }
 
-  #main li:hover{
+  .nav-content--container li:hover{
     background-color: #fff;
     transition: 0.3s;
   }
@@ -243,7 +247,7 @@ li {
   	box-sizing: border-box;
   	background-color: #fff;
   	padding: 0.5rem;
-  	top: 4.4rem;
+  	top: 3.5rem;
   	width: 14rem;
   }
 
@@ -255,7 +259,7 @@ li {
     padding: 0;
   }
 
-  #main li:hover .collapsible-body {
+  .nav-content--container li:hover .collapsible-body {
     display: block;
   }
 
@@ -272,15 +276,14 @@ li {
     Logo
   */
 
-  #logo > i {
-    background: url(../images/HUGE-white.png);
+  .huge-logo{
     background-size: contain;
     background-repeat: no-repeat;
     height: 4rem;
     position: absolute;
     left: 3%;
     width: 4rem;
-    background-position: 0px 18px;
+    background-position: 0 18px;
   }
 
   /*
@@ -299,15 +302,13 @@ li {
   .hero-image {
     min-width: 100%;
     background-size: cover;
-    background-image: url(../images/background-image.jpg);
     height: 640px;
     display: block;
     position: absolute;
   }
 
-  .content h1 {
+  .md-font {
   	color: #fff;
-  	margin: 50px 0;
   	font: 12vmin/1 HUGEAvantGardeBold;
   	letter-spacing: -0.06em;
   	text-align: center;
@@ -354,7 +355,6 @@ li {
 
   /* General */
   ul {
-    overflow: unset;
     padding: 0;
   }
 
@@ -371,7 +371,7 @@ li {
     margin-top: 0;
     height: 59px;
     color: #fff;
-    padding-top: 0px;
+    padding-top: 0;
     position: fixed;
     z-index: 1000;
     overflow: hidden;
@@ -392,8 +392,7 @@ li {
   /*
     Logo
   */
-  #logo > i {
-    background: url(../images/HUGE-white.png);
+  .huge-logo{
     background-size: contain;
     background-repeat: no-repeat;
     height: 75px;
@@ -406,7 +405,7 @@ li {
   /*
     Close Button
   */
-  #close{
+  .close-button{
     width: 104px;
     height: 74px;
     z-index: 1000;
@@ -417,7 +416,7 @@ li {
     display: none;
   }
 
-  #close > i {
+  .close-button > i {
     background: url(../images/toggle-close.svg);
     background-repeat: no-repeat;
     bottom: 6px;
@@ -430,22 +429,17 @@ li {
   /*
     Burger Button
   */
-  #burger {
-    cursor: pointer;
-    height: 74px;
-    position: absolute;
-    left: 24px;
-    top: 8px;
-    width: 74px;
-    z-index: 1000;
+  .burger-button {
+  	cursor: pointer;
+  	position: absolute;
+  	left: 24px;
+  	top: 8px;
+  	width: 67px;
   }
 
-  #burger > i {
+  .burger-button > i {
   	background: url(../images/toggle-open.svg);
-  	background-repeat: no-repeat;
-  	height: 74px;
   	padding: 55% 38%;
-  	width: 104px;
   	top: 18px;
   	position: relative;
   	right: 18px;
@@ -456,7 +450,7 @@ li {
   */
   .top-logo {
     z-index: 2000;
-    margin-top: 0px;
+    margin-top: 0;
     width: 101%;
     height: 59px;
     background: #ec008c;
@@ -512,24 +506,24 @@ li {
     color: #ec008c;
   }
 
-  li#Work:hover,
-  li#About:hover,
-  li#Careers:hover,
-  li#Ideas:hover,
-  li#News:hover,
-  li#Events:hover,
-  li#Contact:hover{
+  #Work:hover,
+  #About:hover,
+  #Careers:hover,
+  #Ideas:hover,
+  #News:hover,
+  #Events:hover,
+  #Contact:hover{
     background: #eee;
   }
 
-  #main > li{
+  .nav-content--container > li{
     padding: 12px 24px;
     box-sizing: border-box;
   }
 
   .dropdown li {
     margin-top: 10px;
-    padding-left: 0px;
+    padding-left: 0;
     box-sizing: border-box;
   }
 
@@ -539,7 +533,7 @@ li {
   }
 
   .selected {
-    display: block !important;
+    display: block;
     width: 96%;
     position: relative;
     top: -36px;
@@ -561,12 +555,11 @@ li {
   .hero-image {
     min-width: 100%;
     background-size: cover;
-    background-image: url(../images/background-image.jpg);
     height: 369px;
     display: block;
   }
 
-  .content h1 {
+  .sm-font {
     color: #000;
     font-size: 2rem;
     margin: 50px 0;
