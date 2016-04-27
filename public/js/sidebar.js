@@ -41,8 +41,8 @@
   function slideIn() {
     var slidingDiv = document.getElementsByClassName('nav-content')[0];
     var stopPosition = 0;
-    if (parseInt(slidingDiv.style.left) < stopPosition) {
-      slidingDiv.style.left = parseInt(slidingDiv.style.left) + 20 + 'px';
+    if (parseInt(slidingDiv.style.left, 10) < stopPosition) {
+      slidingDiv.style.left = parseInt(slidingDiv.style.left, 10) + 20 + 'px';
       setTimeout(slideIn, .050);
     }
   }
@@ -51,11 +51,10 @@
   function slideOut() {
     var slidingDiv = document.getElementsByClassName('nav-content')[0];
     var stopPosition = -380;
-    if (parseInt(slidingDiv.style.left) > stopPosition) {
-      slidingDiv.style.left = parseInt(slidingDiv.style.left) - 20 + 'px';
+    if (parseInt(slidingDiv.style.left, 10) > stopPosition) {
+      slidingDiv.style.left = parseInt(slidingDiv.style.left, 10) - 20 + 'px';
       setTimeout(slideOut, .050);
     }
   }
 
-}
-)();
+})();
