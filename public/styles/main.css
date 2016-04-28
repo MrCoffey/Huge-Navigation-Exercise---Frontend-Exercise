@@ -10,19 +10,27 @@
 /*
   1. General normalitation
 */
-@import "fonts.css";
+
+/*
+  Just if you're wonder why:
+  * selector is not slow, it is slow if you use it in something
+  like .bar > *
+*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   position: relative;
 }
 
-body a{
-  font: 5vmin/1.5 HUGEAvantGardeBold;
-  letter-spacing: -0.03em;
-  font-weight: 100;
-  text-decoration: none;
-  width: 100%;
+body a {
+	font: 5vmin/1.5 HUGEAvantGardeBold;
+	letter-spacing: -0.03em;
+	text-decoration: none;
 }
 
 h1{
@@ -33,6 +41,9 @@ li {
   list-style: none;
 }
 
+/*
+I didn't use any fallback color since this css will run only in chrome, which supports rgba colors
+*/
 .overlay {
   position: fixed;
   top: 0;
@@ -40,7 +51,7 @@ li {
   right: 0;
   height: 120vh;
   background-color: rgba(0,0,0,0.5);
-  z-index: 997;
+  z-index: 99;
 }
 
 .huge-logo {
@@ -57,7 +68,7 @@ li {
 @media screen and (min-width: 1150px) {
 
   nav {
-    height: 6rem;
+    height: 5rem;
     position: relative;
     background-color: #ec008c;
   }
@@ -68,19 +79,21 @@ li {
   }
 
   .nav-content--container {
-    margin: 0;
-    padding: 0;
-    left: 9rem;
-    top: 0;
-    position: absolute;
-    height: 100%;
-    min-width: 8%;
+  	margin: 0;
+  	padding: 0;
+  	left: 14%;
+  	top: 0;
+  	position: absolute;
+  	min-height: 99%;
+  	min-width: 85%;
+  	max-width: 85%;
   }
 
   .nav-content--container > li {
     display: inline-block;
     position: relative;
-    padding: 1.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   .nav-content--container li:hover > a{
@@ -92,16 +105,28 @@ li {
     transition: 0.3s;
   }
 
+  .nav-content--selected {
+    background-color: #fff;
+    transition: 0.3s;
+  }
+
+  .nav-content--selected > a {
+    color: #ec008c;
+  }
+
   .collapsible-body {
   	display: none;
   	position: absolute;
   	z-index: 22;
   	left: 0;
-  	box-sizing: border-box;
   	background-color: #fff;
   	padding: 0.5rem;
-  	top: 6rem;
+  	top: 100%;
   	width: 14rem;
+  }
+
+  .selected {
+    display: block;
   }
 
   .collapsible-body > a {
@@ -112,10 +137,6 @@ li {
     padding: 0;
   }
 
-  .nav-content--container li:hover .collapsible-body {
-    display: block;
-  }
-
   .dropdown a {
     font: 5vmin/1 Galaxie;
     letter-spacing: -0.06em;
@@ -124,19 +145,18 @@ li {
   .dropdown li {
     padding: 5%;
   }
+
   /*
     Logo
   */
-
-  .huge-logo{
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 4rem;
-    position: absolute;
-    left: 2rem;
-    top: .8rem;
-    width: 5rem;
-    background-position: 0 18px;
+  .huge-logo {
+  	background-size: contain;
+  	background-repeat: no-repeat;
+  	height: 100%;
+  	position: absolute;
+  	left: 3%;
+  	width: 6.7%;
+  	background-position: 0 44%;
   }
 
   /*
@@ -168,9 +188,10 @@ li {
   	position: absolute;
   	top: 13rem;
   	width: 35rem;
-  	left: 25%;
+  	left: 10%;
   	margin: 0 auto;
-    font-size: 6rem;
+  	font-size: 6rem;
+  	right: 10%;
   }
 
   .content p {
@@ -215,19 +236,21 @@ li {
   }
 
   .nav-content--container {
-    margin: 0;
-    padding: 0;
-    left: 10rem;
-    top: 0;
-    position: absolute;
-    height: 90%;
-    min-width: 80%;
+  	margin: 0;
+  	padding: 0;
+  	left: 14%;
+  	top: 0;
+  	position: absolute;
+  	min-height: 99%;
+  	min-width: 85%;
+  	max-width: 85%;
   }
 
   .nav-content--container > li {
-    display: inline-block;
-    position: relative;
-    padding: 1.4%;
+  	display: inline-block;
+  	position: relative;
+  	padding: 1.2% 1.4%;
+
   }
 
   .nav-content--container li:hover > a{
@@ -239,16 +262,33 @@ li {
     transition: 0.3s;
   }
 
+  .nav-content--selected{
+    background-color: #fff;
+    transition: 0.3s;
+  }
+
+  .nav-content--selected > a {
+    color: #ec008c;
+  }
+
   .collapsible-body {
   	display: none;
   	position: absolute;
   	z-index: 22;
   	left: 0;
-  	box-sizing: border-box;
+
   	background-color: #fff;
   	padding: 0.5rem;
   	top: 3.5rem;
   	width: 14rem;
+    transition: 0.4s;
+  }
+
+  /*
+    Show the hidden sub-menu once the action is called
+  */
+  .selected {
+    display: block;
   }
 
   .collapsible-body > a {
@@ -257,10 +297,6 @@ li {
 
   .collapsible-body ul {
     padding: 0;
-  }
-
-  .nav-content--container li:hover .collapsible-body {
-    display: block;
   }
 
   .dropdown a {
@@ -272,18 +308,23 @@ li {
     padding: 5%;
   }
 
+  .overlay {
+  	height: 120vh;
+  	background-color: rgba(0,0,0,0.5);
+    z-index: 0;
+  }
   /*
     Logo
   */
 
-  .huge-logo{
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 4rem;
-    position: absolute;
-    left: 3%;
-    width: 4rem;
-    background-position: 0 18px;
+  .huge-logo {
+  	background-size: contain;
+  	background-repeat: no-repeat;
+  	height: 100%;
+  	position: absolute;
+  	left: 3%;
+  	width: 6.7%;
+  	background-position: 0 44%;
   }
 
   /*
@@ -361,6 +402,7 @@ li {
   li {
   	width: 100%;
   	padding: 14px 24px;
+
   }
 
   .nav-bar {
@@ -506,25 +548,18 @@ li {
     color: #ec008c;
   }
 
-  #Work:hover,
-  #About:hover,
-  #Careers:hover,
-  #Ideas:hover,
-  #News:hover,
-  #Events:hover,
-  #Contact:hover{
+  .toggle:hover{
     background: #eee;
   }
 
   .nav-content--container > li{
     padding: 12px 24px;
-    box-sizing: border-box;
   }
 
   .dropdown li {
     margin-top: 10px;
     padding-left: 0;
-    box-sizing: border-box;
+
   }
 
   .dropdown a {
@@ -532,6 +567,9 @@ li {
     letter-spacing: -0.06em;
   }
 
+  /*
+    Show the hidden sub-menu once the action is called
+*/
   .selected {
     display: block;
     width: 96%;
