@@ -12,8 +12,8 @@
 */
 
 /*
-  Just if you're wonder why:
-  * selector is not slow, it is slow if you use it in something
+  Just if you're wonder why I am doing this:
+  * selector is not slow, it is slow if you use it like this
   like .bar > *
 */
 *, *:before, *:after {
@@ -117,7 +117,7 @@ I didn't use any fallback color since this css will run only in chrome, which su
   .collapsible-body {
   	display: none;
   	position: absolute;
-  	z-index: 22;
+  	z-index: 100;
   	left: 0;
   	background-color: #fff;
   	padding: 0.5rem;
@@ -274,9 +274,8 @@ I didn't use any fallback color since this css will run only in chrome, which su
   .collapsible-body {
   	display: none;
   	position: absolute;
-  	z-index: 22;
+  	z-index: 100;
   	left: 0;
-
   	background-color: #fff;
   	padding: 0.5rem;
   	top: 3.5rem;
@@ -542,6 +541,38 @@ I didn't use any fallback color since this css will run only in chrome, which su
   }
 
   /*
+    chevron V
+  */
+
+  .chevron {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 90%;
+  }
+
+  .chevron::after,
+  .chevron::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 11px;
+    height: 11px;
+    right: 20px;
+    z-index: 10;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  .chevron::after {
+    top: 17px;
+    border-top: 2px solid #ec008c;
+    border-left: 2px solid #ec008c;
+  }
+
+  /*
     Hovers
   */
   .collapsible-body li:hover a{
@@ -569,7 +600,7 @@ I didn't use any fallback color since this css will run only in chrome, which su
 
   /*
     Show the hidden sub-menu once the action is called
-*/
+  */
   .selected {
     display: block;
     width: 96%;
