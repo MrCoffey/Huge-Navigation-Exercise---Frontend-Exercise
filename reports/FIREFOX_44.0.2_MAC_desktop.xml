@@ -5,9 +5,9 @@
 
   <testsuite name="desktop"
     errors="0" failures="0" hostname="" id="" package="desktop" skipped="0"
-    tests="2" time="7.291" timestamp="Sat, 30 Apr 2016 23:32:58 GMT">
+    tests="2" time="7.147" timestamp="Sat, 30 Apr 2016 23:41:51 GMT">
   
-    <testcase name="Desktop Content" time="5.236" assertions="9">
+    <testcase name="Desktop Content" time="5.035" assertions="9">
 
     
 
@@ -28,7 +28,7 @@
     
     </testcase>
   
-    <testcase name="Desktop size navbar" time="2.055" assertions="9">
+    <testcase name="Desktop size navbar" time="2.112" assertions="9">
 
     
 
