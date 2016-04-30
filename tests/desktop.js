@@ -1,12 +1,6 @@
-// Helpers
+// Id lists
 var multiLevelLists = ['#About', '#Careers', '#Ideas', '#Contact'];
 var singleList = ['#Work', '#News', '#Events'];
-
-function clickEachLI(ids, client){
-  client.click(id, function(){
-    this.expect.element('#nested-About').to.not.be.visible.before(1000);
-  });
-}
 
 // Spec definitions
 module.exports = {
@@ -14,7 +8,7 @@ module.exports = {
   beforeEach : function(client){
     client
       .url('http://localhost:3000')
-      .pause(500)
+      .pause(500);
   },
 
   after : function(client){
@@ -22,7 +16,7 @@ module.exports = {
   },
 
   // The Navbar should contain the <li> elements that we pull from the API
-  'Navbar Content' : function(client){
+  'Desktop Content' : function(client){
     var lists = multiLevelLists.concat(singleList);
 
     client.expect.element('#main-list').to.be.present;
@@ -34,9 +28,9 @@ module.exports = {
   },
 
   // When user clicks in a <li> with nested elements
-  'Navbar' : function(client){
+  'Desktop size navbar' : function(client){
     client
-      .click('#About')
+      .click('#About');
 
     client.assert.cssClassNotPresent('.collapsible-body', 'selected');
 
@@ -44,12 +38,12 @@ module.exports = {
 
       client.click(id, function(){
         this.expect.element('#nested-' + id.substr(1)).to.be.visible.before(100);
-      })
+      });
 
       client.click(id, function(){
         this.expect.element('.collapsible-body').to.not.be.visible.before(100);
-      })
+      });
 
     });
-   }
+  }
 };
