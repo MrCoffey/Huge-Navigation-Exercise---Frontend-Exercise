@@ -421,7 +421,7 @@ I didn't use any fallback color since this css will run only in chrome, which su
 
   .copy {
     position: relative;
-    top: 27rem;
+    top: 24%;
     padding: 10px 20px;
   }
 

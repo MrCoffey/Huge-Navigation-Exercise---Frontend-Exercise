@@ -1,8 +1,8 @@
+// POPULATE DATA FROM API
+// =========================
+
 function $http(url){
   'use strict';
-
-  // POPULATE DATA FROM API
-  // =========================
 
   var response = { // Returns a serialized response from '/api' which later will be parsed into a Json Object
     ajax : function(url){

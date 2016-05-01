@@ -9,55 +9,56 @@
   var closeLink = document.getElementById('close');
   var overlay = document.getElementsByClassName('content')[0];
 
-  // Slide the nav-bar from right to left adding 20px until is completly shown
-  function slideIn(){
-    var slidingDiv = document.getElementsByClassName('nav-content')[0];
-    var stopPosition = 0;
-
-    if (parseInt(slidingDiv.style.left, 10) < stopPosition) {
-      slidingDiv.style.left = parseInt(slidingDiv.style.left, 10) + 20 + 'px';
-      setTimeout(slideIn, 0.50);
-    }
-  }
-
-  // Slide the nav-bar from left to right
-  function slideOut(){
-    var slidingDiv = document.getElementsByClassName('nav-content')[0];
-    var stopPosition = -380;
-
-    if (parseInt(slidingDiv.style.left, 10) > stopPosition) {
-      slidingDiv.style.left = parseInt(slidingDiv.style.left, 10) - 20 + 'px';
-      setTimeout(slideOut, 0.50);
-    }
-
-  }
-
   // Toggle the nav-bar
-  function toggleNav(action){
+  function slideNav(action){
+    var slidingDiv = document.getElementsByClassName('nav-content')[0];
+    var stopPosition;
+
     if (action === 'show'){
-      slideIn();
+      stopPosition = 0;
+
+      if (parseInt(slidingDiv.style.left, 10) < stopPosition) {
+        slidingDiv.style.left = parseInt(slidingDiv.style.left, 10) + 20 + 'px';
+        setTimeout(slideNav('show'), 0.50);
+      }
+
+    } else {
+      stopPosition = -380;
+
+      if (parseInt(slidingDiv.style.left, 10) > stopPosition) {
+        slidingDiv.style.left = parseInt(slidingDiv.style.left, 10) - 20 + 'px';
+        setTimeout(slideNav('hide'), 0.50);
+      }
+    }
+
+  }
+
+  // Handle the nav actions
+  function handleNav(action){
+    if (action === 'show'){
+      slideNav(action);
       closeLink.setAttribute('style', 'display:block;');
     } else {
-      slideOut();
+      slideNav(action);
       closeLink.removeAttribute('style');
     }
     document.getElementsByClassName('content')[0].classList.toggle('overlay');
   }
 
-
+  // Those definitions recieve the events, then
   burgerLink.addEventListener('click', function(){
-    toggleNav('show');
+    handleNav('show');
   }, false);
 
 
   closeLink.addEventListener('click', function(){
-    toggleNav('hide');
+    handleNav('hide');
   }, false);
 
 
   overlay.addEventListener('click', function(){
     if (this.classList.contains('overlay')){
-      toggleNav('hide');
+      handleNav('hide');
     }
   }, false);
 
